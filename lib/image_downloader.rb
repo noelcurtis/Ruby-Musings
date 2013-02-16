@@ -18,10 +18,7 @@ module RubyMusings
       File.open("test-file." + type[1], 'w') do |file|
         file.write(response.body)
       end
-
     end
-
-
   end
 
 end
