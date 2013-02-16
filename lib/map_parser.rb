@@ -15,16 +15,17 @@ module RubyMusings
         line2 = file.gets
         # get the name of the var
 
-        num = '';
-        new_num='';
+        num = ''
+        new_num=''
 
         line.scan(/var\s\d+\s/).each do |found_var|
           num = found_var.split(' ')[1]
           new_num = "fips_" + num
         end
 
-        line1_subbed = line.gsub(/var\s\d+\s/, "mapData." + new_num + " ")
-        line2_subbed =  line2.gsub(/#{num}.attr/, "mapData." + new_num + ".attr")
+        line1_subbed = line.gsub(/var\s\d+\s/, "mapData." + new_num + " ") # substitute var 02122 = with mapData.fips_02122
+        line2_subbed =  line2.gsub(/#{num}.attr/, "mapData." + new_num + ".attr")  # substitute 02122.attr with mapData.fips.attr
+
         #puts line1_subbed
         #puts line2_subbed
 
